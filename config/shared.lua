@@ -214,6 +214,12 @@ return {
             conada = 'air',
         },
 
+        -- Optional image overrides for vehicles that do not have a default FiveM docs image.
+        -- Key is vehicle spawn name, value is a direct image URL.
+        images = {
+            -- ['your_custom_vehicle'] = 'https://your-cdn.com/vehicles/your_custom_vehicle.webp',
+        },
+
         blocklist = {
             'police',
             'police2',

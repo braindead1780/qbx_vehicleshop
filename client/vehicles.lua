@@ -5,6 +5,9 @@ local sharedConfig = require 'config.shared'.vehicles
 local count = 0
 
 local function insertVehicle(vehicleData, shopType)
+    local vehicleModel = vehicleData.model:lower()
+    local image = sharedConfig.images[vehicleData.model] or sharedConfig.images[vehicleModel] or ('https://docs.fivem.net/vehicles/%s.webp'):format(vehicleModel)
+
     count += 1
     vehicles[count] = {
         shopType = shopType,
@@ -12,6 +15,7 @@ local function insertVehicle(vehicleData, shopType)
 
         title = ('%s %s'):format(vehicleData.brand, vehicleData.name),
         description = ('%s%s'):format(locale('menus.veh_price'), lib.math.groupdigits(vehicleData.price)),
+        image = image,
         serverEvent = 'qbx_vehicleshop:server:swapVehicle',
         args = {
             toVehicle = vehicleData.model,
