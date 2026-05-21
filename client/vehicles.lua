@@ -12,6 +12,7 @@ local function insertVehicle(vehicleData, shopType)
 
         title = ('%s %s'):format(vehicleData.brand, vehicleData.name),
         description = ('%s%s'):format(locale('menus.veh_price'), lib.math.groupdigits(vehicleData.price)),
+        image = ('https://docs.fivem.net/vehicles/%s.webp'):format(vehicleData.model),
         serverEvent = 'qbx_vehicleshop:server:swapVehicle',
         args = {
             toVehicle = vehicleData.model,

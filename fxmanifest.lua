@@ -10,6 +10,7 @@ ox_lib 'locale'
 
 shared_script {
     '@ox_lib/init.lua',
+    '@lation_ui/init.lua',
     '@qbx_core/modules/lib.lua',
 }
 
